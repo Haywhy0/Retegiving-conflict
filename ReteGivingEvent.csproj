@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NUnit" Version="3.13.2" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+		<PackageReference Include="Selenium.Support" Version="3.141.0" />
+		<PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+		<PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="92.0.4515.10700" />
+		<PackageReference Include="SpecFlow" Version="3.9.22" />
+		<PackageReference Include="SpecFlow.NUnit" Version="3.9.22" />
+		<PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.22" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="TESTDATA\InputData\" />
+		<Folder Include="TESTDATA\OutputData\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="FEATURES\BackGroundImage.feature.cs">
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Update="FEATURES\ReteGivingHeader.feature.cs">
+			<DesignTime>True</DesignTime>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<SpecFlowFeatureFiles Update="FEATURES\BackGroundImage.feature">
+			<Generator>SpecFlowSingleFileGenerator</Generator>
+			<LastGenOutput>BackGroundImage.feature.cs</LastGenOutput>
+		</SpecFlowFeatureFiles>
+		<SpecFlowFeatureFiles Update="FEATURES\ReteGivingHeader.feature">
+			<Generator>SpecFlowSingleFileGenerator</Generator>
+			<LastGenOutput>ReteGivingHeader.feature.cs</LastGenOutput>
+		</SpecFlowFeatureFiles>
+	</ItemGroup>
+
+</Project>
